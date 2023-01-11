@@ -1,0 +1,85 @@
+@import '../../app.scss';
+.featured {
+  height: calc(100vh - 70px);
+  position: relative;
+
+  .mainImg {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+  .category{
+    position: absolute;
+    top: 80px;
+    left: 80px;
+    z-index: 1;
+    font-size: 18px;
+    font-weight: 500;
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    select{
+      background-color: var(--main-color);
+      color: white;
+      cursor: pointer;
+      padding: 5px;
+     border-radius: 5px;
+     border: 1px solid white;
+    }
+  }
+
+  .info {
+    width: 35%;
+    position: absolute;
+    left: 50px;
+    bottom: 100px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    img {
+      width: 400px;
+    }
+    .desc {
+      margin: 20px 0px;
+      @include tabletLg{
+        width : 85vw;
+        text-align: justify;
+      }
+
+      @include mobile{
+        width: 85vw;
+        font-size: 10px;
+      }
+      @include tablet{
+        width: 60vw;
+      
+      }
+    }
+    .buttons {
+      display: flex;
+      gap: 20px;
+      button {
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        font-size: 18px;
+        font-weight: 900;
+        cursor: pointer;
+
+        &.play{
+         background-color: white;
+         color: var(--main-color);
+        }
+        &.more{
+         background-color: gray;
+         color: white;
+        }
+       }
+    }
+  }
+}

@@ -1,0 +1,89 @@
+@import '../../app.scss';
+.navbar {
+  width: 100%;
+  color: white;
+  font-size: 12px;
+  position: fixed;
+  top: 0px;
+  z-index: 999;
+  background: linear-gradient(to top ,transparent 0% , rgba(0,0,0,0.5) 50%);
+ 
+  &.scrolled{
+    background-color: var(--main-color);
+  }
+
+  .container {
+
+    height: 70px;
+    padding: 0px 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+   
+    @include mobile{
+      padding: 0px 10px;
+    }
+
+    .left {
+      display: flex;
+      align-items: center;
+
+      img {
+        height: 25px;
+        margin-right: 40px;
+       
+        @include mobile{
+          display : none;
+        }
+      
+      }
+      span {
+        margin-right: 20px;
+        cursor: pointer;
+
+        @include tablet{
+          display: none;
+        }
+        &.tablink{
+          @include tablet{
+            display: block;
+          
+          }
+        }
+      }
+    }
+    .right {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+
+      img {
+        height: 30px;
+        width: 30px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 1px solid white;
+        cursor: pointer;
+      }
+      .profile {
+        .options {
+          display: none;
+          position: absolute;
+          background-color: var(--main-color);
+          border-radius: 10px;
+          span {
+            padding: 10px;
+            cursor: pointer;
+          }
+        }
+        &:hover {
+          .options {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+          }
+        }
+      }
+    }
+  }
+}
